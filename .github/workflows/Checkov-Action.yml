@@ -1,4 +1,7 @@
 name: Checkov GitHub Action
+
+on: push 
+  
   # You may pin to the exact commit or the version.
   # uses: bridgecrewio/checkov-action@99bb2caf247dfd9f03cf984373bc6043d4e32ebf
   uses: bridgecrewio/checkov-action@v12.1347.0
@@ -37,4 +40,34 @@ name: Checkov GitHub Action
     hard_fail_on: # optional
     # Set the username or UID used and optionally the groupname or GID for the action to run under
     container_user: # optional, default is 0
+          
+            - name: Slack: Send to Slack
+  # You may pin to the exact commit or the version.
+  # uses: slackapi/slack-github-action@b0fa283ad8fea605de13dc3f449259339835fc52
+  uses: slackapi/slack-github-action@v2.1.0
+  with:
+    # A custom API URL to send Slack API method requests to.
+    api: # optional
+    # If the step exits with an error on errors or continues.
+    errors: # optional, default is false
+    # The Slack API method to call.
+    method: # optional
+    # Attributes that create the content of the request using JSON or YAML.
+    payload: # optional
+    # Field seperator for nested attributes in the input payload.
+    payload-delimiter: # optional
+    # Path to a file containing a valid input payload made of JSON or YAML.
+    payload-file-path: # optional
+    # If templated variables in input payloads should be replaced.
+    payload-templated: # optional, default is false
+    # An optional proxied route for HTTPS connections.
+    proxy: # optional
+    # The strategy to use when performing retried requests.
+    retries: # optional, default is 5
+    # The authentication value used with the Slack API.
+    token: # optional
+    # A location for posting request payloads.
+    webhook: # optional
+    # Option to use either an incoming webhook or webhook trigger.
+    webhook-type: # optional
           
